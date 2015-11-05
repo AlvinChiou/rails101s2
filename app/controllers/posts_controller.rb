@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :find_group, only: [:new, :edit, :create, :update, :destroy]
-
+  before_action :authenticate_user!, only: [:new, :edit, :create, :update, :destroy]
   def new
     @post = @group.posts.new
   end
