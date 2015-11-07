@@ -188,6 +188,8 @@
     <orderEntry type="library" scope="PROVIDED" name="rails-html-sanitizer (v1.0.2, RVM: ruby-2.2.3 [global]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rails_best_practices (v1.15.7, RVM: ruby-2.2.3 [global]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="railties (v4.2.3, RVM: ruby-2.2.3 [global]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rake (v10.4.2, RVM: ruby-2.2.3 [global]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rdoc (v4.2.0, RVM: ruby-2.2.3 [global]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="require_all (v1.3.2, RVM: ruby-2.2.3 [global]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="responders (v2.1.0, RVM: ruby-2.2.3 [global]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="ruby-progressbar (v1.7.5, RVM: ruby-2.2.3 [global]) [gem]" level="application" />
