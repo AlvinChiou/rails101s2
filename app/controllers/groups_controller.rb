@@ -1,9 +1,9 @@
 class GroupsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :edit, :create, :update, :destroy]
-  before_action :current_user_find_group_by_id, only: [:new, :edit, :update, :destroy]
+  before_action :authenticate_user!
+  before_action :current_user_find_group_by_id, only: [:edit, :update, :destroy]
   before_action :find_group_by_id, only: [:join, :quit]
   def index
-    @groups = Group.all
+    @groups = current_user.participated_groups #這是什麼？
   end
 
   def show
@@ -13,6 +13,7 @@ class GroupsController < ApplicationController
   end
 
   def new
+    @group = Group.new
   end
 
   def edit
