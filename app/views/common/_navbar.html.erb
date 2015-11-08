@@ -9,6 +9,8 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <% if !current_user %>
+            <li><%= link_to("我的群組", account_groups_path) %></li>
+            <li><%= link_to("我的貼文", account_posts_path) %></li>
             <li><%= link_to("註冊", new_user_registration_path) %></li>
             <li><%= link_to("登入", new_user_session_path) %></li>
         <% else %>

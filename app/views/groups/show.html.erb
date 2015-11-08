@@ -1,7 +1,10 @@
 <div class="col-md-12">
   <div class="group">
     <%= link_to("張貼文章", new_group_post_path(@group), class: "btn btn-warning pull-right") %>
-    <%= link_to("編輯", edit_group_path(@group), class: "btn btn-primary pull-right") %>
+
+    <% if @group.editable_by?(current_user) %>
+        <%= link_to("編輯", edit_group_path(@group), class: "btn btn-primary pull-right") %>
+    <% end %>
 
     <% if current_user.present? %>
         <% if current_user.is_member_of?(@group) %>
