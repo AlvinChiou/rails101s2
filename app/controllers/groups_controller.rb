@@ -21,6 +21,7 @@ class GroupsController < ApplicationController
   def create
     @group = current_user.groups.create(group_params)
     if @group.save
+      current_user.join!(@group) # User 在建立 group 後自動成為 group 的一員
       redirect_to groups_path, notice: '新增討論版成功'
     else
       render :new
