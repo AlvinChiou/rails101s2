@@ -2,6 +2,15 @@
   <div class="group">
     <%= link_to("張貼文章", new_group_post_path(@group), class: "btn btn-warning pull-right") %>
     <%= link_to("編輯", edit_group_path(@group), class: "btn btn-primary pull-right") %>
+
+    <% if current_user.present? %>
+        <% if current_user.is_member_of?(@group) %>
+          <%= link_to("退出群組", quit_group_path(@group), method: :post, class: "btn btn-danger") %>
+        <% else %>
+          <%= link_to("加入群組", join_group_path(@group), method: :post, class: "btn btn-info") %>
+        <% end %>
+    <% end %>
+
   </div>
   <h2><%= @group.title %></h2>
 
@@ -20,8 +29,8 @@
           <td> <%= post.content %> </td>
           <td>
             <% if post.editable_by?(current_user) %>
-                <%= link_to("Edit", edit_group_post_path(post.group, post), class: "btn btn-default btn-xs") %>
-                <%= link_to("Delete", group_post_path(post.group, post), class: "btn btn-default btn-xs", method: :delete, data: {confirm: "Are you sure?"}) %>
+                <%= link_to("編輯", edit_group_post_path(post.group, post), class: "btn btn-default btn-xs") %>
+                <%= link_to("刪除", group_post_path(post.group, post), class: "btn btn-default btn-xs", method: :delete, data: {confirm: "Are you sure?"}) %>
             <% end %>
           </td>
         </tr>

@@ -11,7 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151107164158) do
+ActiveRecord::Schema.define(version: 20151108031744) do
+
+  create_table "group_users", force: :cascade do |t|
+    t.integer  "group_id"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "groups", force: :cascade do |t|
     t.string   "title"
@@ -28,6 +35,12 @@ ActiveRecord::Schema.define(version: 20151107164158) do
     t.datetime "updated_at", null: false
     t.integer  "user_id"
   end
+
+# Could not dump table "sqlite_stat1" because of following NoMethodError
+#   undefined method `[]' for nil:NilClass
+
+# Could not dump table "sqlite_stat4" because of following NoMethodError
+#   undefined method `[]' for nil:NilClass
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
